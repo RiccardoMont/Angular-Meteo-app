@@ -5,7 +5,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 The app has been developed in standalone mode.
 
 
-# API CALLS 
+# Api Calls
 All the API calls are in app-service.service.ts.
 The input text field performs API calls on change to opencagedata.com. This endpoint allows to receive geographical coordinates using the name of the city. 
 Once the coordinates have been received, these ones will be used to perform another API call to OpenMeteo receiving several datas (temperature, apparent temperature, wmoCode).
