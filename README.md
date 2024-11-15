@@ -30,6 +30,7 @@ Every city saved on the LocalStorage will be showed on this section. This fuctio
 
 # App-big-cities
 The array default_cities stored in big-cities.component.ts cointains the name of 10 cities, each one of them will be used to perform an Api call to openMeteo. As result the user will see 10 cityCards.
+At the very moment 8 out of 10 cities ar commented and only the first two are visible. Go to default_cities and remove the comment section(/* ... */) to see them in action. 
 
 # App-search-box
 The searchbar is included in this component and will perform and emit two Api calls:
