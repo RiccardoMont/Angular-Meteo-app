@@ -1,0 +1,18 @@
+.fa-caret-up {
+    cursor: pointer;
+    margin: 5px;
+    color: rgb(75, 75, 255);
+}
+
+.fa-caret-down{
+    cursor: pointer;
+    margin: 5px;
+    color: rgb(160, 0, 0);
+}
+
+span{
+    font-weight: 600;
+    font-size: 24px;
+    margin: 10px 0;
+}
+

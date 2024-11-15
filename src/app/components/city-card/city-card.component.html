@@ -1,0 +1,34 @@
+<div class="singleCard" (click)="showOnChart()">
+  <!--Ciclo all'interno dell'array activeweatherelements e, per ogni elemento dell'array, creo un div con classe quello stesso elemento-->
+  <div *ngFor="let element of activeWeatherElements" [ngClass]="element"></div>
+  <div class="flex flex-column justify-between h100">
+    <i
+      class="fa-2x red fa-heart"
+      [ngClass]="isClicked || isHovered ? 'fa-solid' : 'fa-regular'"
+      (mouseenter)="onHover(true)"
+      (mouseleave)="onHover(false)"
+      (click)="toggleFavorite()"
+    ></i>
+    <div class="main-text">
+      <div>
+        <span class="temperature">{{
+          city.meteo.hourly.temperature_2m[hourly_index!]
+        }}</span>
+        <span class="celsius">°c</span>
+      </div>
+      <div class="city-name">
+        <span
+          [class]="
+            'fi fi-' + city.components['ISO_3166-1_alpha-2'].toLowerCase()
+          "
+        ></span>
+        <span>{{ city.components._normalized_city || city.formatted }}</span>
+      </div>
+    </div>
+  </div>
+  <div class="apparent-temperature">
+    <span
+      >Perc: {{ city.meteo.hourly.apparent_temperature[hourly_index!] }}°C</span
+    >
+  </div>
+</div>

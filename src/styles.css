@@ -1,1 +1,74 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+body{
+    background-image: linear-gradient(190deg, #a0c6f5, #c7eded);
+    background-repeat: no-repeat;
+    font-family: "Roboto Condensed", sans-serif;
+}
+
+
+
+/*APP ROOT*/
+app-root{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/*COLORS*/
+
+.red{
+    color: rgb(177, 0, 0);
+}
+
+
+
+/*UTILITY E FLEX*/
+.container{
+  width: 90%;
+}
+
+.flex{
+    display: flex;
+}
+.flex-column{
+    flex-direction: column;
+}
+.justify-center{
+    justify-content: center;
+}
+.justify-between{
+    justify-content: space-between;
+}
+.align-center{
+    align-items: center;
+}
+
+
+/*HEIGHT*/
+.h100{
+    height: 100%;
+}
+
+
+
+
+/*Usando il selettore qui evito che l'incapsulamento nei wrapper da parte di angular mi dia problemi*/
+.binarioCard>*{
+    width: 20%;
+    height: 90%;
+    border-radius: 20px;
+    margin: 5px;
+    background-color: #f4f4f4;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 0;
+    padding: 15px 10px; 
+    box-shadow: 0 0 10px 0 #59d6ff;
+}
+
+.binarioCard>*:hover{
+    cursor: pointer;
+    box-shadow: 0 0 10px 0 #00739a;
+}

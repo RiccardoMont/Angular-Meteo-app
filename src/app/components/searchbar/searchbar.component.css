@@ -1,0 +1,23 @@
+.searchbar{
+    width: 50%;
+    border-radius: 20px;
+    padding: 10px 15px;
+    box-shadow: 0 0 10px 0 #59d6ff;
+    border: 0;
+    margin: 0 -15px 10px -15px;
+}
+
+.searchbar:focus-visible{
+    box-shadow: 0 0 10px 0 #00739a;
+    outline: 0;
+}
+.searchbar:hover{
+    box-shadow: 0 0 10px 0 #00739a;
+    outline: 0;
+}
+
+span{
+    font-weight: 600;
+    font-size: 24px;
+    margin: 10px 0;
+}

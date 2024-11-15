@@ -1,0 +1,542 @@
+.singleCard{
+  height: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 5px;
+    
+}
+
+/*CARD TEXTS*/
+
+.temperature {
+  font-size: 48px;
+  font-weight: 100;
+}
+
+.celsius {
+  font-size: 18px;
+}
+
+.city-name {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.apparent-temperature {
+  font-size: 16px;
+  font-weight: 300;
+  display: flex;
+  align-items: end;
+}
+
+/*FLAGS*/
+.fi {
+  border: 1px solid #cacaca;
+  border-radius: 4px;
+}
+
+/*CARD ICONS*/
+
+/*SOLE*/
+.sun {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  margin: 5px;
+  background: rgb(232, 204, 105);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  z-index: -1;
+  box-shadow: rgba(255, 255, 0, 0.1) 0 0 0 4px;
+  animation: light 800ms ease-in-out infinite alternate;
+}
+
+@keyframes light {
+  from {
+    box-shadow: rgba(255, 255, 0, 0.4) 0 0 0 10px;
+  }
+  to {
+    box-shadow: rgba(255, 255, 0, 0.4) 0 0 0 12px;
+  }
+}
+
+/*LUNA*/
+.moon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  z-index: -1;
+  box-shadow: inset 1px -4px #c9ca2b, inset 12px -14px 0px 0px #c9ca2b;
+  animation: moonlight 800ms ease-in-out infinite alternate;
+}
+
+@keyframes moonlight {
+  from {
+    box-shadow: inset 1px -4px #c9ca2b, inset 12px -14px 0px 0px #c9ca2b;
+  }
+  to {
+    box-shadow: inset 3px -2px #c9ca2b, inset 14px -12px 0px 0px #c9ca2b;
+  }
+}
+
+/*NUVOLA*/
+.cloud {
+  position: absolute;
+  top: 40px;
+  right: 25px;
+  margin: 5px;
+  background: grey;
+  border-radius: 20px;
+  width: 75px;
+  height: 25px;
+  box-shadow: 4px 3px 3px 1px #86a2bc;
+  animation: floating 800ms ease-in-out infinite alternate;
+
+  &::after {
+    z-index: 1;
+    position: absolute;
+    content: "";
+    border-radius: 10px;
+    background-color: grey;
+    width: 30px;
+    height: 20px;
+    left: 11px;
+    top: -7px;
+    transform: rotate(45deg);
+    animation: floatingafter 800ms ease-in-out infinite alternate;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    border-radius: 20px;
+    background-color: grey;
+    width: 50px;
+    height: 30px;
+    left: 11px;
+    top: -13px;
+    transform: rotate(-30deg);
+    animation: floatingbefore 800ms ease-in-out infinite alternate;
+  }
+}
+
+@keyframes floating {
+  from {
+    right: 15px;
+  }
+  to {
+    right: 17px;
+  }
+}
+
+@keyframes floatingafter {
+  from {
+    transform: rotate(45deg);
+    left: 11px;
+  }
+  to {
+    transform: rotate(20deg);
+    left: 9px;
+  }
+}
+
+@keyframes floatingbefore {
+  from {
+    transform: rotate(-30deg);
+    left: 11px;
+  }
+  to {
+    transform: rotate(-40deg);
+    left: 13px;
+  }
+}
+
+/*PIOGGIA*/
+.rain {
+  width: 5px;
+  height: 12px;
+  background-color: blue;
+  border-radius: 7px;
+  position: absolute;
+  top: 62px;
+  right: 60px;
+  transform: rotate(45deg);
+  box-shadow: 3px 1px 4px 0px blue;
+  z-index: 10;
+  animation: raining 800ms ease-in-out infinite alternate;
+
+  &::after {
+    content: "";
+    width: 5px;
+    height: 12px;
+    background-color: blue;
+    border-radius: 7px;
+    position: absolute;
+    top: 11px;
+    right: 20px;
+    transform: rotate(0deg);
+    box-shadow: 3px 1px 4px 0px blue;
+  }
+
+  &::before {
+    content: "";
+    width: 5px;
+    height: 12px;
+    background-color: blue;
+    border-radius: 7px;
+    position: absolute;
+    top: -22px;
+    right: -15px;
+    transform: rotate(0deg);
+    box-shadow: 3px 1px 4px 0px blue;
+  }
+}
+
+.light-rain {
+  width: 5px;
+  height: 12px;
+  background-color: blue;
+  border-radius: 7px;
+  position: absolute;
+  top: 55px;
+  right: 44px;
+  transform: rotate(45deg);
+  box-shadow: 3px 1px 4px 0px blue;
+  z-index: 10;
+  animation: light-raining 800ms ease-in-out infinite alternate;
+
+  &::after {
+    content: "";
+    width: 5px;
+    height: 12px;
+    background-color: blue;
+    border-radius: 7px;
+    position: absolute;
+    top: 15px;
+    right: 18px;
+    transform: rotate(0deg);
+    box-shadow: 3px 1px 4px 0px blue;
+  }
+}
+
+.drizzle {
+  width: 1px;
+  height: 12px;
+  background-color: blue;
+  border-radius: 7px;
+  position: absolute;
+  top: 62px;
+  right: 60px;
+  transform: rotate(45deg);
+  box-shadow: 3px 1px 4px 0px blue;
+  animation: raining 800ms ease-in-out infinite alternate;
+
+  &::after {
+    content: "";
+    width: 2px;
+    height: 12px;
+    background-color: blue;
+    border-radius: 7px;
+    position: absolute;
+    top: 11px;
+    right: 20px;
+    transform: rotate(0deg);
+    box-shadow: 3px 1px 4px 0px blue;
+  }
+
+  &::before {
+    content: "";
+    width: 2px;
+    height: 12px;
+    background-color: blue;
+    border-radius: 7px;
+    position: absolute;
+    top: -22px;
+    right: -15px;
+    transform: rotate(0deg);
+    box-shadow: 3px 1px 4px 0px blue;
+  }
+}
+
+.light-drizzle {
+  width: 1px;
+  height: 12px;
+  background-color: blue;
+  border-radius: 7px;
+  position: absolute;
+  top: 55px;
+  right: 44px;
+  transform: rotate(45deg);
+  box-shadow: 3px 1px 4px 0px blue;
+  z-index: 10;
+  animation: light-raining 800ms ease-in-out infinite alternate;
+
+  &::after {
+    content: "";
+    width: 1px;
+    height: 12px;
+    background-color: blue;
+    border-radius: 7px;
+    position: absolute;
+    top: 15px;
+    right: 18px;
+    transform: rotate(0deg);
+    box-shadow: 3px 1px 4px 0px blue;
+  }
+}
+
+@keyframes raining {
+  from {
+    top: 62px;
+    right: 60px;
+  }
+  to {
+    top: 68px;
+    right: 66px;
+  }
+}
+
+@keyframes light-raining {
+  from {
+    top: 55px;
+    right: 44px;
+  }
+  to {
+    top: 61px;
+    right: 50px;
+  }
+}
+
+/*LAMPO*/
+.bolt {
+  position: absolute;
+  background-color: #e7c41b;
+  top: 55px;
+  right: 65px;
+  z-index: 10;
+  animation: lightning 800ms ease-in-out infinite alternate;
+  height: 35px;
+  aspect-ratio: 0.56;
+  clip-path: polygon(100% 0, 23% 46%, 46% 44%, 15% 69%, 38% 67%, 0 100%, 76% 57%, 53% 58%, 88% 33%, 60% 37%);
+   
+}
+
+.bolt2 {
+  position: absolute;
+  background-color: #e7c41b;
+  top: 50px;
+  right: 37px;
+  z-index: 10;
+  animation: lightning2 800ms ease-in-out infinite alternate;
+  height: 35px;
+  aspect-ratio: 0.56;
+  clip-path: polygon(100% 0, 23% 46%, 46% 44%, 15% 69%, 38% 67%, 0 100%, 76% 57%, 53% 58%, 88% 33%, 60% 37%);
+   
+}
+
+@keyframes lightning {
+  from {
+    right: 65px;
+    top: 55px;
+  }
+  to {
+    right: 73px;
+    top: 61px;
+  }
+}
+
+@keyframes lightning2 {
+  from {
+    right: 37px;
+    top: 50px;
+  }
+  to {
+    right: 45px;
+    top: 56px;
+  }
+}
+
+
+/*NEBBIA*/
+.fog {
+  position: absolute;
+  width: 55px;
+  height: 5px;
+  background-color: grey;
+  border-radius: 8px;
+  top: 50px;
+  right: 20px;
+  animation: fogging 800ms ease-in-out infinite alternate;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 55px;
+    height: 4px;
+    top: 10px;
+    right: 10px;
+    background-color: grey;
+    border-radius: 8px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 55px;
+    height: 4px;
+    top: -10px;
+    right: 10px;
+    background-color: grey;
+    border-radius: 8px;
+  }
+}
+
+@keyframes fogging {
+  from {
+    right: 20px;
+  }
+  to {
+    right: 25px;
+  }
+}
+
+/*NEVE*/
+.snow {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 3px;
+  top: 45px;
+  right: 55px;
+  background-color: white;
+  z-index: 10;
+  animation: snowing 2000ms ease-in infinite;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 3px;
+    top: 10px;
+    right: 20px;
+    background-color: white;
+    z-index: 10;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 3px;
+    top: 5px;
+    right: -20px;
+    background-color: white;
+    z-index: 10;
+  }
+}
+
+.light-snow {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 3px;
+  top: 57px;
+  right: 46px;
+  background-color: white;
+  z-index: 10;
+  animation: light-snowing 2000ms ease-in infinite;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 3px;
+    top: -16px;
+    right: 23px;
+    background-color: white;
+    z-index: 10;
+  }
+}
+
+@keyframes snowing {
+  0% {
+    top: 45px;
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    top: 70px;
+    opacity: 1;
+  }
+}
+
+@keyframes light-snowing {
+  0% {
+    top: 57px;
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    top: 82px;
+    opacity: 1;
+  }
+}
+
+/*GRANDINE*/
+.hail {
+  position: absolute;
+  top: 50px;
+  right: 58px;
+  height: 3px;
+  width: 3px;
+  border: 3px solid rgb(97, 154, 240);
+  transform: rotate(45deg);
+  background-color: rgb(193, 208, 240);
+  z-index: 10;
+  filter: drop-shadow(-2px -2px 1px #4444dd);
+  animation: hailing 1500ms ease-in infinite;
+  
+  &::after{
+    content: '';
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    height: 3px;
+    width: 3px;
+    border: 3px solid rgb(97, 154, 240);
+    background-color: rgb(193, 208, 240);
+    
+  }
+
+  &::before{
+    content: '';
+    position: absolute;
+    top: -25px;
+    right: -18px;
+    height: 3px;
+    width: 3px;
+    border: 3px solid rgb(97, 154, 240);
+    background-color: rgb(193, 208, 240);
+    
+  }
+}
+
+@keyframes hailing {
+  from{
+    top: 50px;
+  }
+  to{
+    top: 85px;
+  }
+}

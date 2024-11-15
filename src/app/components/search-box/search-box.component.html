@@ -1,0 +1,4 @@
+<app-searchbar (sendDataEvent)="receiveData($event)"></app-searchbar>
+<app-binario>
+    <app-city-card *ngFor="let city of cities" [city]="city" [hourly_index]="hourly_index" (removeFromFavorites)="onRemoveFromFavorites($event)" (addToFavorites)="onAddToFavorites($event)" (showThisCityChart)="showOnChart($event)"></app-city-card>
+</app-binario>

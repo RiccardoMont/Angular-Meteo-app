@@ -1,0 +1,17 @@
+.footer{
+    height: 10vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 15px 0
+}
+
+.email{
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.author{
+    font-style: italic;
+    font-size: 20px;
+}
